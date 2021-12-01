@@ -1,5 +1,5 @@
 # Travaux Pratiques Cloud Management
-Suivre les tutos step-by-step ci-dessous...
+Suivre les quickstarts ci-dessous...
 
 ## Création et manipulation d’un Storage Account dans Azure :
 
