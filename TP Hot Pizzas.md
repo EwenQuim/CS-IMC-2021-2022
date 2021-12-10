@@ -12,9 +12,11 @@ My customers deserve hot pizzas!!!
   
 ## Création de l'Injecteur d'évènements (1)
 
-Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create  
-<br />
-Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow  
+1. Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create  
+2. Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow  
+3. Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
+4. Utiliser un Step de type "Send Event"
+5. Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br />
 Exemple d'évènement au format JSON:  
 ```
@@ -24,12 +26,6 @@ Exemple d'évènement au format JSON:
      "Temperature": 70  
 }
 ```
-<br />
-Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
-<br />
-Utiliser un Step de type "Send Event"
-<br />
-Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br /><br />
 On doit arriver à quelque chose comme ça :
 <br />
@@ -38,15 +34,11 @@ https://user-images.githubusercontent.com/20154628/145559457-300e909f-ac61-47af-
 
 ## Création du Consommateur d'évènements (2)
 
-Créer une autre Azure Logic Apps
-<br />
-Commencer le workflow par un Step de type trigger "When events are available in Event Hub"
-<br />
-Utiliser un Step de type "Parse JSON" pour "récupérer" les data dans des variables (Use sample payload to generate schema!)
-<br />
-Utiliser un Step de type "Condition" pour tester la température (<50 par exemple)
-<br />
-Utiliser un Step de type "Send an email" pour envoyer un message au client si la température n'est pas ok!
+1. Créer une autre Azure Logic Apps
+2. Commencer le workflow par un Step de type trigger "When events are available in Event Hub"
+3. Utiliser un Step de type "Parse JSON" pour "récupérer" les data dans des variables (Use sample payload to generate schema!)
+4. Utiliser un Step de type "Condition" pour tester la température (<50 par exemple)
+5. Utiliser un Step de type "Send an email" pour envoyer un message au client si la température n'est pas ok!
 <br /><br />
 On doit arriver à quelque chose comme ça :
 <br />
