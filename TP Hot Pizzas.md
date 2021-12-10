@@ -30,7 +30,7 @@ Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la 
 Utiliser un Step de type "Send Event"
 <br />
 Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
-<br />
+<br /><br /><br />
 On doit arriver à quelque chose comme ça:
 <br />
 ![image](https://user-images.githubusercontent.com/20154628/145557092-d52add20-75b8-4da2-989f-4d24af8b925f.png)
