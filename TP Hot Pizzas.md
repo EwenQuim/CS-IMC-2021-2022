@@ -18,6 +18,7 @@ My customers deserve hot pizzas!!!
 4. Utiliser un Step de type "Send Event"
 5. Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br />
+
 Exemple d'évènement au format JSON:  
 ```
 {  
@@ -40,6 +41,7 @@ https://user-images.githubusercontent.com/20154628/145559457-300e909f-ac61-47af-
 4. Utiliser un Step de type "Condition" pour tester la température (<50 par exemple)
 5. Utiliser un Step de type "Send an email" pour envoyer un message au client si la température n'est pas ok!
 <br /><br />
+
 On doit arriver à quelque chose comme ça :
 <br />
 https://user-images.githubusercontent.com/20154628/145561491-daebde95-945d-4476-8139-d76c4f36e399.png
