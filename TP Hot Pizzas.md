@@ -42,7 +42,7 @@ Créer une autre Azure Logic Apps
 <br />
 Commencer le workflow par un Step de type trigger "When events are available in Event Hub"
 <br />
-Utiliser un Step de type "Parse JSON" pour "récupérer" les data dans des variables
+Utiliser un Step de type "Parse JSON" pour "récupérer" les data dans des variables (Use sample payload to generate schema!)
 <br />
 Utiliser un Step de type "Condition" pour tester la température (<50 par exemple)
 <br />
