@@ -41,6 +41,12 @@ https://user-images.githubusercontent.com/20154628/145559457-300e909f-ac61-47af-
 Créer une autre Azure Logic Apps
 <br />
 Commencer le workflow par un Step de type trigger "When events are available in Event Hub"
+<br />
+Utiliser un Step de type "Parse JSON" pour "récupérer" les data dans des variables
+<br />
+Utiliser un Step de type "Condition" pour tester la température (<50 par exemple)
+<br />
+Utiliser un Step de type "Send an email" pour envoyer un message au client si la température n'est pas ok!
 <br /><br />
 On doit arriver à quelque chose comme ça :
 <br />
