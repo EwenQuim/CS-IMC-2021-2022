@@ -32,8 +32,9 @@ Utiliser un Step de type "Send Event"
 Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br /><br />
 On doit arriver à quelque chose comme ça :
+<br />
 ![image](https://user-images.githubusercontent.com/20154628/145559457-300e909f-ac61-47af-9f91-a866d3191426.png)
-
+<br />
 
 ## Création du Consommateur d'évènements
 
