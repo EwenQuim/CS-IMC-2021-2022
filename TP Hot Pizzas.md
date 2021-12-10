@@ -9,12 +9,12 @@ My customers deserve hot pizzas!!!
 Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create
 Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
 
-Exemple d'évènement au format JSON:
-{
-     "DeviceId": "dev01",
-     "Speed": 40,
-     "Temperature": 70
-}
+Exemple d'évènement au format JSON:  
+{  
+     "DeviceId": "dev01",  
+     "Speed": 40,  
+     "Temperature": 70  
+}  
 
 ## Création du Consommateur d'évènements
 
