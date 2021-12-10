@@ -12,9 +12,9 @@ My customers deserve hot pizzas!!!
   
 ## Création de l'Injecteur d'évènements
 
-Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create  
+1. Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create  
 <br />
-Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow  
+2. Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow  
 <br />
 Exemple d'évènement au format JSON:  
 {  
@@ -23,11 +23,11 @@ Exemple d'évènement au format JSON:
      "Temperature": 70  
 }  
 <br />
-Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
+3. Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
 <br />
-Utiliser un Step de type "Send Event"
+4. Utiliser un Step de type "Send Event"
 <br />
-Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
+5. Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br />
 
 ## Création du Consommateur d'évènements
