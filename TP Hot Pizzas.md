@@ -1,9 +1,8 @@
 # Travaux Pratiques Hot Pizzas
 My customers deserve hot pizzas!!!
-
+  
 ![image](https://user-images.githubusercontent.com/20154628/145546851-d89a1c02-4353-4cc2-b7b4-ab10b3818e6b.png)
-
-
+  
 ## Création de l'injecteur
 
 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal
