@@ -10,7 +10,7 @@ My customers deserve hot pizzas!!!
 ![image](https://user-images.githubusercontent.com/20154628/145551474-327f4179-658d-4638-aac8-5b24d1415b0f.png)
 <br />
   
-## Création de l'Injecteur d'évènements
+## Création de l'Injecteur d'évènements (1)
 
 Créer un service Azure Event Hub : https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create  
 <br />
@@ -36,7 +36,7 @@ On doit arriver à quelque chose comme ça :
 https://user-images.githubusercontent.com/20154628/145559457-300e909f-ac61-47af-9f91-a866d3191426.png 
 <br />
 
-## Création du Consommateur d'évènements
+## Création du Consommateur d'évènements (2)
 
 Créer une autre Azure Logic Apps
 <br />
