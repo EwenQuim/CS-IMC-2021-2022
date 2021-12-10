@@ -17,11 +17,13 @@ My customers deserve hot pizzas!!!
 2. Créer une Azure Logic Apps pour injecter des évènements dans l'Event Hub : https://docs.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow  
 <br />
 Exemple d'évènement au format JSON:  
+```
 {  
      "DeviceId": "dev01",  
      "Speed": 40,  
      "Temperature": 70  
-}  
+}
+```
 <br />
 3. Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
 <br />
