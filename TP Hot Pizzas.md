@@ -24,7 +24,9 @@ Exemple d'évènement au format JSON:
 }  
 <br />
 Commencer le workflow Logic Apps avec un Step de type "Recurrence" (définir la fréquence)
+<br />
 Utiliser un Step de type "Send Event"
+<br />
 Utiliser la fonction random (rand) dans le JSON pour faire varier les valeurs...
 <br />
 
