@@ -32,6 +32,8 @@ Maintenant que vous pouvez vous connecter aux espaces de stockage, copions le fi
 6. Pour chacun des datasets créés:
     - Dans l'onglet Connection, choisissez ";" (Semicolon) comme *Column delimiter*
     - Toujours dans l'onglet Connection, assurez-vous que *First row as header* est bien coché
+    ![image](https://user-images.githubusercontent.com/22498922/146524247-7b5c9511-0a47-49cb-a278-c2de184b9cab.png)
+
 8. Cliquez sur *Validate all* en haut de l'écran, il ne devrait pas y avoir d'erreur. S'il y en a, cliquez sur l'erreur et le portail vous pointera vers cette dernière
 9. Cliquez sur *Publish all* pour sauvegarder
 10. Lancez votre pipeline en cliquant sur *Add trigger* puis *Trigger now*. Vous pouvez observer votre run dans l'onglet *Monitor*
@@ -54,9 +56,11 @@ Nos données sont maintenant réunies dans notre Data Lake (le blob Storage). Ef
     ![image](https://user-images.githubusercontent.com/22498922/146520673-14caaf82-128f-4b2c-8435-1b0d3cb4c8f5.png)
 
 5. N'oubliez pas de valider et de publier!
-6. Editez votre pipeline de copie et ajoutez maintenant le Data flow que vous venez de crée en  vous assurant que la copie a lieu **avant** le Data flow.
-7. Validez, publiez et exécutez le pipeline.
-8. Vérifiez que le fichier de sortie est bien unique et associe à chaque passage, un identifiant technique de compteur
+6. Editez votre pipeline de copie et ajoutez maintenant le Data flow que vous venez de crée en  vous assurant que la copie a lieu **avant** le Data flow. Utilisez les rectangles verts pour connecter les boîtes entre elles.
+    ![image](https://user-images.githubusercontent.com/22498922/146524341-0ef447fe-278b-4927-bdad-ae5d4f4f8643.png)
+
+8. Validez, publiez et exécutez le pipeline.
+9. Vérifiez que le fichier de sortie est bien unique et associe à chaque passage, un identifiant technique de compteur
 
 ## Pour l'or!
 Avec ce que vous avez appris
