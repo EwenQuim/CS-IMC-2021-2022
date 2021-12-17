@@ -50,7 +50,9 @@ Nos données sont maintenant réunies dans notre Data Lake (le blob Storage). Ef
 3. Validez puis publiez
 4. Créez un nouveau Data flow
     - Avec deux sources de données, *comptages_azure* et *compteurs*
-    - Effectue une jointure **inner** sur le champs *Identifiant du compteur*
+    - Effectue une jointure **left outer** sur le champs *Identifiant du compteur*
+      ![image](https://user-images.githubusercontent.com/22498922/146525724-9640f1b0-e8f3-4f81-bfef-366dfd9bdd1a.png)
+
     - Ecrit la sortie (*Sink*) dans le container *output* du Blob Storage, au format CSV (ex: **silver/vovan/**)
 
     ![image](https://user-images.githubusercontent.com/22498922/146520673-14caaf82-128f-4b2c-8435-1b0d3cb4c8f5.png)
