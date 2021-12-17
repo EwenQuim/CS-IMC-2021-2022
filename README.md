@@ -8,7 +8,7 @@
 - [TP Hot Pizzas](https://github.com/lvovan/CS-IMC-2021-2022/blob/main/TP%20Hot%20Pizzas.md)
 
 **DataOps et AI/MLOps**
-- TBD
+- [TP Pipeline et Dataflow.md](https://github.com/lvovan/CS-IMC-2021-2022/blob/main/TP%20Pipeline%20et%20Dataflow.md)
 
 **Bases de Données NoSQL et Graph**
 - TBD
