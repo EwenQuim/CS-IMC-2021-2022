@@ -26,18 +26,39 @@ Maintenant que vous pouvez vous connecter aux espaces de stockage, copions le fi
 4. Dans *Source* cliquez sur *New* et allez chercher le fichier *comptage-velo-donnees-compteurs.csv* en passant par le *Linked service* adéquat. Utilisez le bouton *Browse* (icône de dossier) pour vous y aider, nommez le *compteurs-aws*
 5. Dans *Sink* (la destination de la copie), créez un nouveau dataset dans le *Linked Service* blob storage. Ce fichier sera également au format CSV.
     - Nommez le dataset *comptages_azure*
-    - Dans *File path* mettez: **aws-s3/import-[votrenom]** et rien pour *File*
+    - Dans *File path* mettez: **bronze/import-[votrenom]** et rien pour *File*
     - Décochez *First row as header*
     - Dans *Import schema* choisissez *None*
-6. Cliquez sur *Validate all* en haut de l'écran, il ne devrait pas y avoir d'erreur. S'il y en a, cliquez sur l'erreur et le portail vous pointera vers cette dernière
-7. Cliquez sur *Publish all* pour sauvegarder
-8. Lancez votre pipeline en cliquant sur *Add trigger* puis *Trigger now*. Vous pouvez observer votre run dans l'onglet *Monitor*
-9. Depuis le portail Azure, allez dans l'espace de stockage *veloparisazure* et vous devriez retrouver votre fichier en utilisant le [Storage browser](https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/43515dcd-cf02-45fd-bc30-f2c80dccc7dc/resourcegroups/datatransformation-rg/providers/Microsoft.Storage/storageAccounts/veloparisazure/storagebrowser)
-10. Référençons maintenant les données des compteurs en créant un nouveau dataset pointant vers le fichier **infocompteurs/ /comptage-velo-compteurs.csv** (utilisez le bouton *Browse*) et cochez *First row as header*
+6. Pour chacun des datasets créés:
+    - Dans l'onglet Connection, choisissez ";" (Semicolon) comme *Column delimiter*
+    - Toujours dans l'onglet Connection, assurez-vous que *First row as header* est bien coché
+8. Cliquez sur *Validate all* en haut de l'écran, il ne devrait pas y avoir d'erreur. S'il y en a, cliquez sur l'erreur et le portail vous pointera vers cette dernière
+9. Cliquez sur *Publish all* pour sauvegarder
+10. Lancez votre pipeline en cliquant sur *Add trigger* puis *Trigger now*. Vous pouvez observer votre run dans l'onglet *Monitor*
+11. Depuis le portail Azure, allez dans l'espace de stockage *veloparisazure* et vous devriez retrouver votre fichier en utilisant le [Storage browser](https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/43515dcd-cf02-45fd-bc30-f2c80dccc7dc/resourcegroups/datatransformation-rg/providers/Microsoft.Storage/storageAccounts/veloparisazure/storagebrowser)
+12. Référençons maintenant les données des compteurs en créant un nouveau dataset pointant vers le fichier **bronze/ /comptage-velo-compteurs.csv** (utilisez le bouton *Browse*) et cochez *First row as header*
 
 ## Jointure des données
 Nos données sont maintenant réunies dans notre Data Lake (le blob Storage). Effectuons la jointure!
-1. Pour les deux datasets dans Azure, *comptages_azure* et *compteurs*:
+1. Modifiez le dataset *comptages_azure* pour qu'il pointe vers le fichier importé (*File path*, utilisez le bouton *Browse* pour vous aider)
+2. Pour le dataset *compteurs*:
     - Dans l'onglet Connection, choisissez ";" (Semicolon) comme *Column delimiter*
     - Toujours dans l'onglet Connection, assurez-vous que *First row as header* est bien coché
     - Dans l'onglet Schema, cliquez sur *Import schema* puis *From connection/store*
+3. Validez puis publiez
+4. Créez un nouveau Data flow
+    - Avec deux sources de données, *comptages_azure* et *compteurs*
+    - Effectue une jointure **inner** sur le champs *Identifiant du compteur*
+    - Ecrit la sortie (*Sink*) dans le container *output* du Blob Storage, au format CSV (ex: **silver/vovan/**)
+
+    ![image](https://user-images.githubusercontent.com/22498922/146520673-14caaf82-128f-4b2c-8435-1b0d3cb4c8f5.png)
+
+5. N'oubliez pas de valider et de publier!
+6. Editez votre pipeline de copie et ajoutez maintenant le Data flow que vous venez de crée en  vous assurant que la copie a lieu **avant** le Data flow.
+7. Validez, publiez et exécutez le pipeline.
+8. Vérifiez que le fichier de sortie est bien unique et associe à chaque passage, un identifiant technique de compteur
+
+## Pour l'or!
+Avec ce que vous avez appris
+1. Modifiez votre dataflow pour prendre les données de **silver** et effectuer une moyenne des distances par rapport au centre de Paris (colonne *Distance centre de Paris*) par compteur.
+2. Ecrire le résultat dans **gold**
